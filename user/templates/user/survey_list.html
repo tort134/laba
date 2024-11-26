@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Survey List</h1>
+    <ul>
+    {% for survey in surveys %}
+        <li><a href="{% url 'survey_detail' survey.id %}">{{ survey.title }}</a></li>
+    {% endfor %}
+    </ul>
+ {% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <main>
+        <h2>Главная</h2>
+        {% if user.is_authenticated %}
+            <p>Здравствуй {{ user.username }}</p>
+        {% else %}
+            <p>Здравствуй гость</p>
+        {% endif %}
+    </main>
+
+     <h1>Survey List</h1>
+    <a href="{% url 'survey_detail' survey.id %}">{{ survey.title }}</a>
+
+{% endblock %}
